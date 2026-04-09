@@ -48,6 +48,10 @@ const AppRouter = () => {
                         {
                             path: "new",
                             element: <NewDashboard />
+                        },
+                        {
+                            path: "edit/:id",
+                            element: <NewDashboard />
                         }
                     ]
                 },

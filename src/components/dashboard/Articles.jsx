@@ -2,12 +2,15 @@ import React from 'react';
 import styles from '../../css/dashboard/Articles.module.css';
 import { useNavigate } from 'react-router';
 import { useArticles } from "../../context/ArticleContext"
+import { useAuth } from '../../context/AuthContext';
 import BlogDisplay from './BlogDisplay';
 
 const Articles = () => {
 
     const navigate = useNavigate();
-    const { articles, setArticles } = useArticles();
+    const { articles } = useArticles();
+    const { user } = useAuth();
+    const userArticles = articles.filter((article) => article.email == user?.email);
 
     return (
         <div className={styles.mainDiv}>
@@ -15,7 +18,7 @@ const Articles = () => {
 
 
             {
-                articles.length <= 0 ? (
+                userArticles.length <= 0 ? (
                     <div className={styles.noArticles}>
                         <i className={`ri-file-text-line ${styles.icon}`}></i>
                         <h4 className={styles.headTxt}>No articles yet</h4>
@@ -25,7 +28,9 @@ const Articles = () => {
                         <button className={styles.button} onClick={() => navigate("/dashboard/new")}><i className="ri-add-line"></i> Create Article</button>
                     </div>
                 ) : (
-                    <BlogDisplay article={articles[0]} />
+                    userArticles.map((article) => (
+                        <BlogDisplay article={article} key={article.id} />
+                    ))
                 )
             }
 
