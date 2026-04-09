@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router';
+import Blog from '../pages/Blog';
 
 const MainLayout = lazy(() => import("../layout/MainLayout"));
 const Home = lazy(() => import("../pages/Home"));
@@ -50,6 +51,10 @@ const AppRouter = () => {
                         }
                     ]
                 },
+                {
+                    path: "blog/:id",
+                    element: <Blog />
+                }
             ]
         },
     ])

@@ -132,10 +132,11 @@
     font-weight: 600;
     padding: 0.5rem;
     border-radius: 50%;
-    width: auto;
-    height: auto;
-    display: inline-block;
-    aspect-ratio: 1 / 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Ful {

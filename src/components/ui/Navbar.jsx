@@ -63,7 +63,7 @@ const Navbar = () => {
                             </>
                         ) : (
                             <>
-                                <div className={styles.nameFirst}> {short} </div>
+                                <div className={styles.nameFirst}> {short.length <= 1 ? `${short} ` : short} </div>
                                 <div className={styles.Ful}> {user.name} </div>
                                 <div className={`${styles.minMenu} ${menuOpen ? styles.active : ""}`}>
                                     <div className={styles.userDtl}>

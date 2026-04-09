@@ -43,6 +43,7 @@
     background: var(--primary-color);
     transition: all 0.3s ease;
     color: var(--bg-color);
+    cursor: pointer;
 }
 
 .button:hover {
