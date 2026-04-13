@@ -37,7 +37,7 @@ const Navbar = () => {
 
     return (
         <nav className={styles.nav}>
-            <div className={styles.brand}>
+            <div className={styles.brand} onClick={() => navigate("/")}>
                 <i className={`ri-edit-line ${styles.logo}`}></i>
                 <p className={styles.brandName}>Inkwell</p>
             </div>
